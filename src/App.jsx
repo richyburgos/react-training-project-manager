@@ -30,6 +30,10 @@ function App() {
         });
     };
 
+    const removeProject = (id) => {
+        setProjects(prevProjects => prevProjects.filter(project => project.id !== id));
+    }
+
     const appendTask = (projectId, newTask) => {
         setProjects(prevProject =>
             prevProject.map(p => {
@@ -75,6 +79,7 @@ function App() {
                     { mode === 'view' &&
                         <Project project={projects[selectedProjectIndex]}
                                  addTask={appendTask}
+                                 deleteProject={removeProject}
                                  changeMode={changeMode}
                         />
                     }

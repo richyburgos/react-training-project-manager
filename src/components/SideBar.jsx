@@ -37,13 +37,18 @@ export default function SideBar({projects, selectProject,  changeMode}) {
                         </div>
 
                         <ul className="mt-3 space-y-1 text-sm text-slate-800 dark:text-slate-400 font-medium">
-                            { projects.map(project => (
+                            { projects.length > 0 && projects.map(project => (
                                 <li key={project.id}
                                     onClick={() => handleProjectClick(project.id)}
                                     className="cursor-pointer flex items-center gap-2.5 hover:text-slate-900 hover:bg-slate-100 rounded-md px-3 py-2 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:hover:text-slate-50 dark:hover:bg-neutral-800">
                                     {project.title}
                                 </li>))
                             }
+                            { projects.length === 0 && (
+                                <li className="cursor-pointer flex items-center gap-2.5 hover:text-slate-900 hover:bg-slate-100 rounded-md px-3 py-2 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:hover:text-slate-50 dark:hover:bg-neutral-800">
+                                    No projects created yet
+                                </li>
+                            )}
                         </ul>
                     </div>
                 </nav>

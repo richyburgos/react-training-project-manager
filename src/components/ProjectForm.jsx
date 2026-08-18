@@ -6,6 +6,7 @@ export default function ProjectForm({mode = "view", changeMode, addProject}) {
     const titleRef = useRef();
     const descRef = useRef();
     const dueDateRef = useRef();
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const unixTimeSec = Math.floor(Date.now() / 1000);

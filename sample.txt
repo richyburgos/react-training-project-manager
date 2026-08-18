@@ -1,0 +1,890 @@
+{
+    course_name: "sample course",
+    course_description: "sample course description",
+    course_total_time: {"hours": 1, "minutes": 2, "seconds": 3},
+    course_total_sections: 10,
+    course_total_topics: 20,
+    course_lessons: [
+        {
+            Section: "section 1",
+            topics: [
+                {
+                    name: "topic 1",
+                    duration: {
+                        hours: 1,
+                        minutes: 2,
+                        seconds: 3
+                    }
+                },
+                {
+                    name: "topic 2",
+                    duration: {
+                        hours: 4,
+                        minutes: 5,
+                        seconds: 6
+                    }
+                }
+            ]
+        }
+    ]
+}
+
+Course name: React - The Complete Guide (incl. Next.js, Redux)
+Course Description: Dive in and learn React.js from scratch! Learn React, Hooks, Redux, React Router, Next.js, Best Practices and way more!
+Course Sections and topics:
+
+40 sections • 727 lectures • 71h 21m total length
+
+- Getting Started • 10 lectures • 41min
+Welcome To The Course! | 1:07
+What is React.js? And Why Would You Use It? | 2:58
+ReactJS vs "Vanilla JavaScript": Why Use React? | 10:57
+Editing Our First React App | 4:22
+About This Course & Course Outline | 2:55
+The Two Ways (Paths) Of Taking This Course | 3:08
+Getting The Most Out Of This Course | 5:24
+Join our Online Learning Community |0:29
+Creating React Projects | 7:10
+Why Do You Need A Special Project Setup? | 2:51
+
+- Javascript Refresher • 23 Lectures • 1hr 42min
+Module Introduction | 1:49
+Starting Project | 1:00
+Adding JavaScript To A Page & How React Projects Differ | 6:57
+React Projects Use a Build Process | 8:04
+"import" & "export" | 12:04
+Revisiting Variables & Values | 7:01
+Revisiting Operators | 2:33
+Revisiting Functions & Parameters | 8:14
+Exercise: Working with Functions (no time allotted)
+Arrow Functions | 2:11
+More on the Arrow Function Syntax | 1:14
+Revisiting Objects & Classes | 6:07
+Arrays & Array Methods like map() | 11:10
+Exercise: Array Methods (no time allotted)
+Destructuring | 5:16
+Destructuring in Function Parameter Lists | 0:48
+The Spread Operator | 3:13
+Revisiting Control Structures | 5:28
+Manipulating the DOM - Not With React! | 0:52
+Using Functions as Values | 7:21
+Defining Functions Inside Of Functions | 1:55
+Reference vs Primitive Values | 4:44
+Next-Gen JavaScript - Summary | 3:51
+JS Array Functions | 0:20
+Module Resources | 0:15
+
+- React Essentials - Components, JSX, Props, State & More • 26 lectures • 2hr 27min
+Module Introduction | 1:48
+It's All About Components! [Core Concept] | 6:07
+Setting Up The Starting Project | 3:06
+JSX & React Components [Core Concept] | 4:42
+Creating & Using a First Custom Component | 5:52
+A Closer Look: Components & File Extensions | 1:14
+Building & Using a Component
+How React Handles Components & How It Builds A "Component Tree" [Core Concept] | 8:21
+Components & JSX
+Using & Outputting Dynamic Values [Core Concept] | 6:00
+Setting HTML Attributes Dynamically & Loading Image Files | 4:41
+Outputting Dynamic Content
+Making Components Reusable with Props [Core Concept] | 9:06
+Alternative Props Syntaxes | 6:44
+More Prop Syntaxes | 1:34
+Working with Props
+Dynamic Values & Props
+Best Practice: Storing Components in Files & Using a Good Project Structure | 6:31
+Storing Component Style Files Next To Components | 6:15
+Component Composition: The special "children" Prop [Core Concept] | 8:06
+Component Composition
+Reacting to Events [Core Concept] | 6:45
+Passing Functions as Values to Props | 6:43
+Reacting to Events
+Passing Custom Arguments to Event Functions | 5:36
+Configuring Event Handlers
+Best Practices & Event Handling
+How NOT to Update the UI - A Look Behind The Scenes of React [Core Concept] | 5:29
+Managing State & Using Hooks [Core Concept] | 10:28
+Working with State
+Deriving & Outputting Data Based on State | 4:50
+State & Computed Values
+Rendering Content Conditionally | 8:03
+Conditional Content
+CSS Styling & Dynamic Styling | 5:12
+Dynamic Styling
+Outputting List Data Dynamically | 7:40
+Dynamic List Content
+Conditional Content & Dynamic Lists
+Essentials Summary Slides | 0:09
+Module Summary | 6:05
+
+- React Essentials - Deep Dive • 38 lectures • 3hr 17min
+Module Introduction | 1:26
+You Don't Have To Use JSX! | 4:37
+Working with Fragments | 5:40
+Using Fragments
+When Should You Split Components? | 3:14
+Splitting Components By Feature & State | 6:54
+Problem: Props Are Not Forwarded To Inner Elements | 6:44
+Forwarding Props To Wrapped Elements | 3:46
+Forwarding Props
+Working with Multiple JSX Slots | 8:42
+Setting Component Types Dynamically | 8:44
+Setting Default Prop Values | 2:09
+Creating Flexible Components
+Onwards To The Next Project & Advanced Concepts | 2:16
+Not All Content Must Go Into Components | 5:10
+Closer Look: public/ vs assets/ for Image Storage | 1:12
+New Project: First Steps Towards Our Tic-Tac-Toe Game | 3:58
+Concept Repetition: Splitting Components & Building Reusable Components | 4:13
+Concept Repetition: Working with State | 7:57
+Component Instances Work In Isolation! | 2:03
+Conditional Content & A Suboptimal Way Of Updating State | 4:54
+Best Practice: Updating State Based On Old State Correctly | 7:04
+User Input & Two-Way-Binding | 7:42
+Two-Way-Binding
+Rendering Multi-Dimensional Lists | 7:40
+Best Practice: Updating Object State Immutably | 8:44
+Lifting State Up [Core Concept] | 9:39
+Avoid Intersecting States! | 5:22
+Prefer Computed Values & Avoid Unnecessary State Management | 6:17
+Deriving State From Props | 7:22
+Sharing State Across Components | 4:12
+Reducing State Management & Identifying Unnecessary State | 5:52
+Disabling Buttons Conditionally | 2:37
+Outsourcing Data Into A Separate File | 4:28
+Lifting Computed Values Up | 5:19
+Deriving Computed Values From Other Computed Values | 5:29
+Tic-Tac-Toe Game: The "Game Over" Screen & Checking for a Draw | 5:40
+Why Immutability Matters - Always! | 5:28
+When NOT To Lift State Up | 5:19
+An Alternative To Lifting State Up | 3:16
+Final Polishing & Improving Components | 5:15
+Summary Slides | 0:08
+
+- React Essentials - Practice Project • 8 lectures • 54min
+Module Introduction & A Challenge For You! | 5:09
+Adding a Header Component | 4:48
+Getting Started with a User Input Component | 5:07
+Handling Events & Using Two-Way-Binding | 10:28
+Lifting State Up | 8:59
+Computing Values & Properly Handling Number Values | 5:41
+Outputting Results in a List & Deriving More Values | 9:02
+Outputting Content Conditionally | 4:23
+
+- Styling React Components • 20 lectures • 1hr 55min
+Module Introduction & Starting Project | 3:57
+Splitting CSS Code Across Multiple Files | 3:22
+Styling React Apps with Vanilla CSS - Pros & Cons | 2:32
+Vanilla CSS Styles Are NOT Scoped To Components! | 3:31
+Styling React Apps with Inline Styles | 6:24
+Dynamic & Conditional Inline Styles | 3:27
+Dynamic Styling with Inline Styles
+Dynamic & Conditional Styling with CSS Files & CSS Classes | 5:41
+Dynamic Styling with CSS Classes
+Scoping CSS Rules with CSS Modules | 9:51
+Introducing "Styled Components" (Third-party Package) | 8:03
+Creating Flexible Components with Styled Components | 4:47
+Dynamic & Conditional Styling with Styled Components | 11:07
+Styled Components: Pseudo Selectors, Nested Rules & Media Queries | 7:15
+Creating Reusable Components & Component Combinations | 9:53
+Introducing Tailwind CSS For React App Styling | 11:26
+Tailwind 3 vs 4 | 0:23
+Adding & Using Tailwind CSS In A React Project | 3:39
+Tailwind: Media Queries & Pseudo Selectors | 5:22
+Dynamic & Conditional Styling with Tailwind | 5:50
+Migrating The Demo App to Tailwind CSS | 4:15
+Tailwind CSS: Pros & Cons | 4:26
+Exercise: Dynamic Styles
+
+- Debugging React Apps • 6 lectures • 29min
+Module Introduction | 1:26
+The Starting Project | 1:16
+Understanding React Error Messages | 8:31
+Using the Browser Debugger & Breakpoints | 7:23
+Understanding React's "Strict Mode" | 6:19
+Using the React DevTools (Browser Extension) | 3:57
+Exercise: Fix Errors
+
+- Working with Refs & Portals • 17 lectures • 1hr 26min
+Module Introduction & Starting Project | 3:19
+Repetition: Managing User Input with State (Two-Way-Binding) | 5:17
+Repetition: Fragments | 1:12
+Introducing Refs: Connecting & Accessing HTML Elements via Refs | 6:04
+Manipulating the DOM via Refs | 2:14
+Accessing DOM Elements with "refs"
+Refs vs State Values | 4:45
+Adding Challenges to the Demo Project | 4:49
+Setting Timers & Managing State | 4:56
+Using Refs for More Than "DOM Element Connections" | 8:30
+Managing Other Values with Refs
+Adding a Modal Component | 6:39
+Forwarding Refs to Custom Components | 6:28
+Forwarding Refs
+Exposing Component APIs via the useImperativeHandle Hook | 8:23
+Exposing Component APIs
+More Examples: When To Use Refs & State | 8:50
+Sharing State Across Components | 4:58
+Enhancing the Demo App "Result Modal" | 2:12
+Closing the Modal via the ESC (Escape) Key | 0:19
+Introducing & Understanding "Portals" | 6:55
+Working with Portals
+
+- Practice Project: Project Management App (with Components, State, Refs & More) • 16 lectures • 2hr 4min
+Module Introduction & Starting Project | 3:11
+Adding a "Projects Sidebar" Component | 2:29
+Styling the Sidebar & Button with Tailwind CSS | 5:00
+Adding the "New Project" Component & A Reusable "Input" Component | 5:58
+Styling Buttons & Inputs with Tailwind CSS | 7:03
+Splitting Components to Split JSX & Tailwind Styles (for Higher Reusability) | 6:49
+Managing State to Switch Between Components | 8:19
+Collecting User Input with Refs & Forwarded Refs | 13:33
+Handling Project Creation & Updating the UI | 6:00
+Validating User Input & Showing an Error Modal via useImperativeHandle | 11:24
+Styling the Modal via Tailwind CSS | 5:46
+Making Projects Selectable & Viewing Project Details | 15:22
+Handling Project Deletion | 4:44
+Adding "Project Tasks" & A Tasks Component | 5:51
+Managing Tasks & Understanding Prop Drilling | 15:23
+Clearing Tasks & Fixing Minor Bugs | 6:40
+
+- React's Context API & useReducer - Advanced State Management • 13 lectures • 1hr 19min
+Module Introduction | 1:54
+Understanding Prop Drilling & Project Overview | 5:58
+Prop Drilling: Component Composition as a Solution | 5:17
+Introducing the Context API | 2:17
+Creating & Providing The Context | 8:30
+Consuming the Context | 8:43
+Linking the Context to State | 7:27
+A Different Way Of Consuming Context | 5:01
+What Happens When Context Values Change? | 1:25
+Migrating the Entire Demo Project to use the Context API | 6:20
+Outsourcing Context & State Into a Separate Provider Component | 6:05
+Creating & Using Context
+Introducing the useReducer Hook | 10:06
+Dispatching Actions & Editing State with useReducer | 10:14
+Using useReducer()
+
+- Handling Side Effects & Working with the useEffect) Hook • 16 lectures • 1hr 21min
+Module Introduction & Starting Project | 4:02
+What's a "Side Effect"? A Thorough Example | 7:22
+A Potential Problem with Side Effects: An Infinite Loop | 2:48
+Using useEffect for Handling (Some) Side Effects | 5:31
+Not All Side Effects Need useEffect | 7:58
+useEffect Not Needed: Another Example | 8:30
+Preparing Another Use-Case For useEffect | 4:11
+Using useEffect for Syncing With Browser APIs | 4:09
+Understanding Effect Dependencies | 3:00
+Fixing a Small Bug | 0:45
+Preparing Another Problem That Can Be Fixed with useEffect | 4:54
+Introducing useEffect's Cleanup Function | 4:49
+The Problem with Object & Function Dependencies | 8:09
+The useCallback Hook | 3:48
+useEffect's Cleanup Function: Another Example | 7:31
+Optimizing State Updates | 3:44
+
+- Practice Project: Building a Quiz App • 12 lectures • 2hr 1min
+Module Introduction & Starting Project | 2:21
+A First Component & Some State | 7:03
+Deriving Values, Outputting Questions & Registering Answers | 12:53
+Shuffling Answers & Adding Quiz Logic | 6:57
+Adding Question Timers | 11:40
+Working with Effect Dependencies & useCallback | 7:14
+Using Effect Cleanup Functions & Using Keys for Resetting Components | 7:53
+Highlighting Selected Answers & Managing More State | 11:34
+Splitting Components Up To Solve Problems | 17:43
+Moving Logic To Components That Actually Need It ("Moving State Down") | 12:46
+Setting Different Timers Based On The Selected Answer | 8:07
+Outputting Quiz Results | 15:09
+
+- A Look Behind The Scenes Of React & Optimization Techniques • 15 lectures • 1hr 21min
+Module Introduction | 1:16
+React Builds A Component Tree / How React Works Behind The Scenes | 8:41
+Analyzing Component Function Executions via React's DevTools Profiler | 5:57
+Avoiding Component Function Executions with memo() | 8:03
+Avoiding Component Function Executions with Clever Structuring | 6:06
+Understanding the useCallback() Hook | 7:05
+Understanding the useMemo() Hook | 5:58
+React Uses A Virtual DOM - Time To Explore It! | 7:15
+Why Keys Matter When Managing State! | 11:56
+More Reasons For Why Keys Matter | 2:54
+Using Keys For Resetting Components | 5:22
+State Scheduling & Batching | 5:49
+Optimizing React with MillionJS | 4:45
+
+- An Alternative Way Of Building Components: Class-based Components • 10 lectures • 1hr
+Module Introduction | 2:10
+What & Why | 4:52
+Adding a First Class-based Component | 6:54
+Working with State & Events | 11:38
+The Component Lifecycle (Class-based Components Only!) | 5:20
+Lifecycle Methods In Action | 11:46
+Class-based Components & Context | 4:53
+Class-based vs Functional Components: A Summary | 2:42
+Introducing Error Boundaries | 9:52
+Module Resources | 0:19
+
+- Sending Http Requests (e.g. Connecting to a Database) • 16 lectures • 1hr 25min
+Module Introduction | 2:53
+How (Not) To Connect To A Database | 6:20
+Starting Project & Dummy Backend API | 3:25
+Preparing the App For Data Fetching | 5:47
+How NOT To Send HTTP Requests (And Why It's Wrong) | 6:24
+Sending HTTP Requests (GET Request) via useEffect | 3:59
+Using async / await | 2:25
+Handling Loading States | 5:27
+Importing from Error.jsx | 0:19
+Handling HTTP Errors | 9:16
+Transforming Fetched Data | 5:31
+Extracting Code & Improving Code Structure | 2:53
+Sending Data with POST Requests | 12:00
+Using Optimistic Updating | 7:33
+Deleting Data (via DELETE HTTP Requests) | 3:43
+Practice: Fetching Data | 7:13
+
+- Building Custom React Hooks • 7 lectures • 40min
+Module Introduction & Starting Project | 2:07
+Revisiting the "Rules of Hooks" & Why To Use Hooks | 6:11
+Creating a Custom Hook | 5:32
+Custom Hook: Managing State & Returning State Values | 10:50
+Exposing Nested Functions From The Custom Hook | 6:03
+Using A Custom Hook in Multiple Components | 4:25
+Creating Flexible Custom Hooks | 4:59
+
+- Working with Forms & User Input • 16 lectures • 1hr 49min
+Module Introduction & Starting Project | 2:04
+What Are Forms & What's Tricky About Them? | 3:59
+Handling Form Submission | 11:31
+Managing & Getting User Input via State & Generic Handlers | 11:12
+Getting User Input via Refs | 4:35
+Getting Values via FormData & Native Browser APIs | 9:03
+Resetting Forms | 4:38
+Validating Input on Every Keystroke via State | 6:58
+Validating Input Upon Lost Focus (Blur) | 7:53
+Validating Input Upon Form Submission | 7:54
+Validating Input via Built-in Validation Props | 4:59
+Mixing Custom & Built-in Validation Logic | 4:28
+Building & Using a Reusable Input Component | 10:05
+Outsourcing Validation Logic | 3:22
+Creating a Custom useInput Hook | 15:11
+Using Third-Party Form Libraries | 1:31
+
+- Practice Project: Building a Food Order App • 19 lectures • 3hr 21min
+Module Introduction | 2:48
+What are Form Actions? | 6:47
+Adding Validation Checks | 7:50
+Managing Form-dependent State with useActionState() | 12:21
+Using User Input | 10:04
+Moving the Action Function out of the Component | 2:34
+A Demo App: Introduction | 3:26
+Handling Form Submission | 9:40
+Working with Asynchronous Form Actions | 6:23
+Updating the UI with useFormStatus() | 5:06
+Registering Multiple Form Actions | 4:32
+Sending an HTTP Request via a Form Action | 5:26
+Using the "pending" State from useActionState() | 3:47
+Adding Optimistic Updating | 9:47
+Module Summary | 2:57
+
+- Handling Forms via Form Actions • 15 lectures • 1hr 33min
+Module Introduction & Starting Project | 4:14
+Planning the App & Adding a First Component | 6:40
+Fetching Meals Data (GET HTTP Request) | 12:00
+Adding a "MealItem" Component | 7:39
+Formatting & Outputting Numbers as Currency | 2:51
+Creating a Configurable & Flexible Custom Button Component | 8:02
+Getting Started with Cart Context & Reducer | 20:59
+Finishing & Using the Cart Context & Reducer | 17:21
+Adding a Reusable Modal Component with useEffect | 7:29
+Opening the Cart in the Modal via a New Context | 19:32
+Working on the Cart Items | 8:01
+Adding a Custom Input Component & Managing Modal Visibility | 19:31
+Handling Form Submission & Validation | 6:50
+Sending a POST Request with Order Data | 7:35
+Adding a Custom HTTP Hook & Avoiding Common Errors | 26:23
+Handling HTTP Loading & Error States | 3:12
+Finishing Touches | 14:07
+Migrating To Form Actions | 3:13
+Managing Form Status with Form Actions | 5:08
+
+- Diving into Redux (An Alternative To The Context API) • 24 lectures • 2hr 15min
+Module Introduction | 1:05
+Another Look At State In React Apps | 5:14
+Redux vs React Context | 6:19
+How Redux Works | 5:48
+MUST READ: Redux createStore() is (not) deprecated | 0:36
+Exploring The Core Redux Concepts | 15:14
+More Redux Basics | 3:04
+Preparing a new Project | 1:59
+Creating a Redux Store for React | 4:54
+Providing the Store | 3:13
+Using Redux Data in React Components | 5:08
+Dispatching Actions From Inside Components | 3:33
+Redux with Class-based Components | 10:20
+Attaching Payloads to Actions | 4:15
+Working with Multiple State Properties | 6:19
+How To Work With Redux State Correctly | 5:07
+Redux Challenges & Introducing Redux Toolkit | 5:27
+Adding State Slices | 8:11
+Connecting Redux Toolkit State | 4:47
+Migrating Everything To Redux Toolkit | 6:19
+Working with Multiple Slices | 11:50
+Reading & Dispatching From A New Slice | 6:56
+Splitting Our Code | 5:03
+Summary | 3:53
+
+- Advanced Redux • 16 lectures • 1hr 54min
+Module Introduction | 0:39
+Redux & Side Effects (and Asynchronous Code) | 3:27
+Refresher / Practice: Part 1/2 | 20:12
+Refresher / Practice: Part 2/2 | 18:00
+Using Firebase as a Backend | 0:30
+Redux & Async Code | 4:09
+Frontend Code vs Backend Code | 5:40
+Where To Put Our Logic | 8:59
+Using useEffect with Redux | 6:00
+A Problem with useEffect() | 0:14
+Handling Http States & Feedback with Redux | 12:49
+Using an Action Creator Thunk | 12:07
+Getting Started with Fetching Data | 8:39
+Finalizing the Fetching Logic | 5:16
+Exploring the Redux DevTools | 5:37
+Summary | 1:52
+
+- Building a Multi-Page SPA with React Router • 44 lectures • 3hr 46min
+Module Introduction | 3:21
+Routing: Multiple Pages in Single-Page Applications | 3:15
+Project Setup & Installing React Router | 3:05
+Defining Routes | 7:42
+Adding a Second Route | 2:07
+Exploring an Alternative Way of Defining Routes | 3:01
+Navigating between Pages with Links | 4:35
+Layouts & Nested Routes | 8:24
+Showing Error Pages with errorElement | 3:57
+Working with Navigation Links (NavLink) | 6:37
+Navigating Programmatically | 2:41
+Defining & Using Dynamic Routes | 7:44
+Adding Links for Dynamic Routes | 3:22
+Understanding Relative & Absolute Paths | 10:38
+Working with Index Routes | 1:55
+Onwards to a new Project Setup | 3:16
+Time to Practice: Problem | 1:25
+Time to Practice: Solution | 23:16
+Data Fetching with a loader() | 7:35
+Using Data From A Loader In The Route Component | 2:51
+More loader() Data Usage | 3:17
+Where Should loader() Code Be Stored? | 2:18
+When Are loader() Functions Executed? | 2:48
+Reflecting The Current Navigation State in the UI | 2:53
+Returning Responses in loader()s | 4:01
+Which Kind Of Code Goes Into loader()s? | 1:14
+Error Handling with Custom Errors | 4:56
+Extracting Error Data & Throwing Responses | 6:24
+The json() Utility Function | 2:07
+Dynamic Routes & loader()s | 7:32
+The useRouteLoaderData() Hook & Accessing Data From Other Routes | 7:40
+Planning Data Submission | 2:22
+Working with action() Functions | 9:07
+Submitting Data Programmatically | 9:06
+Updating the UI State Based on the Submission Status | 4:02
+Validating User Input & Outputting Validation Errors | 6:57
+Reusing Actions via Request Methods | 7:55
+Behind-the-Scenes Work with useFetcher() | 9:10
+Deferring Data Fetching with defer() | 9:07
+defer() and json() with React Router v7 | 0:36
+Controlling Which Data Should Be Deferred | 7:22
+Module Summary | 2:56
+Module Resources | 0:21
+Old Lectures | 0:37
+
+- Adding Authentication To React Apps • 15 lectures • 1hr 13min
+Module Introduction | 1:10
+How Authentication Works | 9:07
+Project Setup & Route Setup | 3:46
+Working with Query Parameters | 7:35
+Implementing the Auth Action | 11:40
+Validating User Input & Outputting Validation Errors | 4:18
+Adding User Login | 1:55
+Attaching Auth Tokens to Outgoing Requests | 6:32
+Adding User Logout | 4:20
+Updating the UI Based on Auth Status | 6:05
+Important: loader()s must return null or any other value | 0:28
+Adding Route Protection | 2:46
+Adding Automatic Logout | 5:10
+Managing the Token Expiration | 7:28
+Module Resources | 0:21
+
+- Deploying React Apps • 7 lectures • 32min
+Module Introduction | 1:39
+Deployment Steps | 3:35
+Understanding Lazy Loading | 4:47
+Adding Lazy Loading | 9:11
+Building the Code For Production | 2:22
+Deployment Example | 6:44
+Server-side Routing & Required Configuration | 4:06
+
+- React Query / Tanstack Query: Handling HTTP Requests With Ease • 20 lectures • 2hr 54min
+Module Introduction | 1:46
+Project Setup & Overview | 4:08
+React Query: What & Why? | 5:59
+Installing & Using Tanstack Query - And Seeing Why It's Great! | 16:32
+Understanding & Configuring Query Behaviors - Cache & Stale Data | 7:43
+Dynamic Query Functions & Query Keys | 13:05
+The Query Configuration Object & Aborting Requests | 5:27
+Enabled & Disabled Queries | 6:55
+Changing Data with Mutations | 11:29
+Fetching More Data & Testing the Mutation | 6:39
+Acting on Mutation Success & Invalidating Queries | 8:50
+A Challenge! The Problem | 2:14
+A Challenge! The Solution | 16:37
+Disabling Automatic Refetching After Invalidations | 2:42
+Enhancing the Demo App & Repeating Mutation Concepts | 9:18
+React Query Advantages In Action | 8:56
+Updating Data with Mutations | 4:49
+Optimistic Updating | 13:06
+Using the Query Key As Query Function Input | 7:47
+React Query & React Router | 20:26
+
+- A (Pretty Deep Dive) Introduction to Next.js • 79 lectures • 6hr 59min
+Module Introduction | 2:00
+Creating a NextJS Project | 4:16
+Understanding File-based Routing & React Server Components | 2:45
+Adding Another Route via the Filesystem | 3:06
+Navigating Between Pages | 4:12
+Working with Pages & Layouts | 3:22
+Reserved File Names, Custom Components & How To Organize A NextJS Project | 6:31
+Reserved Filenames | 0:46
+Configuring Dynamic Routes & Using Route Parameters | 6:17
+Onwards to the Main Project: The Foodies App | 1:24
+Exercise: Your Task | 2:03
+Exercise: Solution | 8:19
+Revisiting The Concept Of Layouts | 3:50
+Adding a Custom Component To A Layout | 5:58
+Styling NextJS Project: Your Options & Using CSS Modules | 6:00
+Optimizing Images with the NextJS Image Component | 4:57
+Using More Custom Components | 3:48
+Populating The Starting Page Content | 4:18
+Preparing an Image Slideshow | 3:25
+React Server Components vs Client Components - When To Use What | 8:15
+Using Client Components Efficiently | 11:07
+Outputting Meals Data & Images With Unknown Dimensions | 10:31
+Setting Up A SQLite Database | 3:11
+Fetching Data By Leveraging NextJS & Fullstack Capabilities | 7:17
+Adding A Loading Page | 4:00
+Using Suspense & Streamed Responses For Granular Loading State Management | 5:54
+Handling Errors | 5:22
+Handling "Not Found" States | 1:57
+Loading & Rendering Meal Details via Dynamic Routes & Route Parameters | 11:03
+Throwing Not Found Errors For Individual Meals | 2:03
+Getting Started with the "Share Meal" Form | 1:53
+Getting Started with a Custom Image Picker Input Component | 8:28
+Adding an Image Preview to the Picker | 5:59
+Improving the Image Picker Component | 0:17
+Introducing & Using Server Actions for Handling Form Submissions | 9:02
+Storing Server Actions in Separate Files | 3:45
+Creating a Slug & Sanitizing User Input for XSS Protection | 3:20
+Storing Uploaded Images & Storing Data in the Database | 12:56
+Managing the Form Submission Status with useFormStatus | 5:30
+Adding Server-Side Input Validation | 5:54
+Working with Server Action Responses & useFormState | 8:05
+Building For Production & Understanding NextJS Caching | 6:06
+Triggering Cache Revalidations | 3:57
+Don't Store Files Locally On The Filesystem! | 2:13
+Bonus: Storing Uploaded Images In The Cloud (AWS S3) | 6:51
+Adding Static Metadata | 3:47
+Adding Dynamic Metadata | 2:20
+Module Summary | 4:25
+About the NextJS Pages Router | 2:55
+Creating a NextJS Project | 2:07
+Analyzing the Created Project | 2:52
+Adding First Pages | 6:05
+Adding Nested Paths & Pages (Nested Routes) | 3:47
+Creating Dynamic Pages (with Parameters) | 3:36
+Extracting Dynamic Parameter Values | 4:07
+Linking Between Pages | 7:13
+Onwards to a bigger Project! | 3:32
+Preparing the Project Pages | 3:42
+Outputting a List of Meetups | 5:03
+Adding the New Meetup Form | 3:54
+The "_app.js" File & Layout Wrapper | 6:17
+Using Programmatic (Imperative) Navigation | 3:47
+Adding Custom Components & CSS Modules | 10:00
+How Pre-rendering Works & Which Problem We Face | 5:52
+Data Fetching for Static Pages | 8:56
+More on Static Site Generation (SSG) | 5:44
+Exploring Server-side Rendering (SSR) with "getServerSideProps" | 6:27
+Working with Params for SSG Data Fetching | 5:14
+Preparing Paths with "getStaticPaths" & Working With Fallback Pages | 7:16
+Introducing API Routes | 6:20
+Working with MongoDB | 9:32
+Sending Http Requests To Our API Routes | 6:49
+Getting Data From The Database | 7:09
+Getting Meetup Details Data & Preparing Pages | 9:41
+Adding "head" Metadata | 9:19
+Deploying Next.js Projects | 12:26
+Using Fallback Pages & Re-deploying | 4:13
+Summary | 2:15
+Module Resources | 0:22
+
+- React Server Components (RS) & Server Actions - A Closer Look • 11 lectures • 53min
+Module Introduction | 1:48
+Why We Need A Special Project Setup | 4:14
+Understanding React Server Components | 7:16
+Changing Server to Client Components | 5:46
+Combining Server and Client Components | 5:52
+Fetching Data with RSCs | 3:39
+Submitting Data with Server Actions | 7:06
+Using the use() Hook for Promises & Data Fetching | 7:19
+The use() Hook In Action | 5:31
+Handling Errors | 3:48
+Theory Wrap Up | 1:02
+
+- Animating React Apps • 21 lectures • 1hr 57min
+Module Introduction | 3:05
+Project Setup & Overview | 1:42
+Animating with CSS Transitions | 7:40
+Animating with CSS Animations | 5:38
+Introducing Framer Motion | 3:48
+Framer Motion Basics & Fundamentals | 8:29
+Animating Between Conditional Values | 4:13
+Adding Entry Animations | 4:28
+Animating Element Disappearances / Removal | 3:51
+Making Elements "Pop" With Hover Animations | 4:13
+Reusing Animation States | 3:28
+Nested Animations & Variants | 7:46
+Animating Staggered Lists | 4:28
+Animating Colors & Working with Keyframes | 4:03
+Imperative Animations | 7:28
+Animating Layout Changes | 3:34
+Orchestrating Multi-Element Animations | 10:05
+Combining Animations With Layout Animations | 3:55
+Animating Shared Elements | 4:15
+Re-triggering Animations via Keys | 4:52
+Scroll-based Animations | 15:44
+
+- React Patterns & Best Practices • 12 lectures • 1hr 10min
+Module Introduction | 0:55
+Project Overview | 0:50
+Introducing Compound Components | 11:04
+Managing Multi-Component State with the Context API | 10:57
+Grouping Compound Components | 6:29
+Adding Extra Components For Reusability & Configurability | 8:36
+Sharing Cross-Component State When Working With Compound Components | 6:06
+Introducing & Using Render Props | 6:14
+Adding Search To A React App | 4:18
+Implementing a Search Functionality With Help Of Render Props | 4:18
+Handling Keys Dynamically | 2:42
+Working with Debouncing | 7:10
+
+- Replacing Redux with React Hooks • 15 lectures • 55min
+Module Introduction | 1:01
+React 18 & This Section | 0:25
+Starting Project & Why You Would Replace Redux | 4:19
+Alternative: Using the Context API | 7:13
+Toggling Favorites with the Context API | 5:43
+Context API Summary (and why NOT to use it instead of Redux) | 2:30
+Getting Started with a Custom Hook as a Store | 8:11
+Finishing the Store Hook | 5:53
+Creating a Concrete Store | 4:11
+Using the Custom Store | 5:40
+Custom Hook Store Summary | 3:13
+Optimizing the Custom Hook Store | 4:04
+Bonus: Managing Multiple State Slices with the Custom Store Hook | 0:11
+Wrap Up | 2:00
+Module Resources | 0:21
+
+- Testing React Apps (Unit Tests) • 13 lectures • 1hr 11min
+Module Introduction | 1:23
+What & Why? | 3:23
+Understanding Different Kinds Of Tests | 4:04
+What To Test & How To Test | 1:29
+Understanding the Technical Setup & Involved Tools | 2:39
+Running a First Test | 7:16
+Writing Our First Test | 10:14
+Grouping Tests Together With Test Suites | 2:14
+Testing User Interaction & State | 14:00
+Testing Connected Components | 3:19
+Testing Asynchronous Code | 9:11
+Working With Mocks | 8:30
+Summary & Further Resources | 3:47
+
+- React + TypeScript • 25 lectures • 2hr 35min
+Module Introduction | 1:26
+What & Why? | 6:34
+Installing & Using TypeScript | 6:38
+Exploring the Base Types | 3:55
+Working with Array & Object Types | 5:33
+Understanding Type Inference | 2:47
+Using Union Types | 2:48
+Understanding Type Aliases | 2:42
+Functions & Function Types | 5:19
+Diving Into Generics | 8:01
+A Closer Look At Generics | 1:20
+Creating a React + TypeScript Project | 8:34
+Working with Components & TypeScript | 5:41
+Working with Props & TypeScript | 14:20
+Adding a Data Model | 9:09
+Time to Practice: Exercise Time! | 7:02
+Form Submissions In TypeScript Projects | 5:21
+Working with refs & useRef | 10:56
+Working with "Function Props" | 7:26
+Managing State & TypeScript | 5:13
+Adding Styling | 2:19
+Time to Practice: Removing a Todo | 9:27
+The Context API & TypeScript | 13:55
+Summary | 2:18
+Bonus: Exploring tsconfig.json | 5:46
+
+- Optional: React Summary & Core Feature Walkthrough • 37 lectures • 3hr 48min
+Module Introduction | 1:08
+What Is React & Why Would You Use It? | 5:37
+React Projects - Requirements | 2:09
+Creating React Projects | 3:27
+Out Starting Project | 3:28
+Understanding How React Works | 7:46
+Building A First Custom Component | 11:15
+Outputting Dynamic Values | 5:03
+Reusing Components | 6:00
+Passing Data to Components with Props | 6:15
+CSS Styling & CSS Modules | 10:07
+Exercise & Another Component | 6:31
+Preparing the App For State Management | 3:45
+Adding Event Listeners | 7:52
+Working with State | 10:00
+Lifting State Up | 9:08
+The Special "children" Prop | 7:21
+State & Conditional Content | 8:59
+Adding a Shared Header & More State Management | 7:51
+Adding Form Buttons | 3:34
+Handling Form Submission | 6:18
+Updating State Based On Previous State | 5:30
+Outputting List Data | 6:38
+Adding a Backend to the React SPA | 6:10
+Sending a POST HTTP Request | 4:12
+Handling Side Effects with useEffect() | 9:06
+Handle Loading State | 4:23
+Understanding & Adding Routing | 3:55
+Adding Routes | 5:36
+Working with Layout Routes | 4:08
+Refactoring Route Components & More Nesting | 5:35
+Linking & Navigating | 8:09
+Data Fetching via loader()s | 9:07
+Submitting Data with action()s | 11:07
+Dynamic Routes | 8:41
+Module Summary | 1:25
+Module Resources | 0:21
+
+- Course Roundup • 2 lectures • 2min
+Course Roundup | 1:10
+Bonus! |0:25
+
+- Course Update & Old Course Content • 2 lectures • 16min
+Course Update Overview, Explanation & Migration Guide | 15:48
+Old Course Content Download | 0:17
+
+- [BONUS / OPTIONAL] React Basics & Working With Components • 23 lectures • 2hr 17min
+About these [BONUS / OPTIONAL] sections | 0:27
+Module Introduction | 3:46
+What Are Components? And Why Is React All About Them? | 7:19
+React Code Is Written In A "Declarative Way"! | 3:45
+Creating a new React Project | 2:08
+The Starting Project | 0:14
+Analyzing a Standard React Project | 13:26
+Introducing JSX | 4:03
+How React Works | 4:31
+Exercise: Working with JSX Code
+Building a First Custom Component | 9:18
+Exercise: Building a First Component
+Writing More Complex JSX Code | 5:14
+Adding Basic CSS Styling | 4:57
+Outputting Dynamic Data & Working with Expressions in JSX | 8:34
+Passing Data via "props" | 13:04
+Exercise: Passing Data via "props"
+Alternative Ways of Passing & Receiving / Handling "props" | 5:09
+Adding "normal" JavaScript Logic to Components | 6:10
+Splitting Components Into Multiple Components | 11:20
+Time to Practice: React & Component Basics
+The Concept of "Composition" ("children props") | 13:33
+Exercise: Component Composition
+A First Summary | 4:12
+A Closer Look At JSX | 9:28
+Organizing Component Files | 3:07
+An Alternative Function Syntax | 2:41
+Learning Check: React Basics, Components, Props & JSX
+Module Resources | 0:19
+
+- [BONUS / OPTIONAL] Time to Practice: Component Basics • 8 lectures • 26min
+Module Introduction | 1:33
+The Starting Project & Your Tasks | 4:47
+Exercise Hints | 1:00
+Outputting Key Concepts Data | 5:51
+Identifying Possible Components | 2:02
+Creating & Using a Custom Component | 4:35
+Outsourcing Concept Items Into a Reusable Component | 5:23
+Module Resources | 0:21
+
+- [BONUS / OPTIONAL] React State & Working with Events • 19 lectures • 1hr 59min
+Module Introduction | 2:30
+Listening to Events & Working with Event Handlers | 10:01
+Exercise: Listening to Events
+How Component Functions Are Executed | 5:51
+Working with "State" | 11:17
+Exercise: Working with "State"
+A Closer Look at the "useState" Hook | 7:51
+State can be updated in many ways! | 0:18
+Adding Form Inputs | 10:21
+Listening to User Input | 5:26
+Working with Multiple States | 6:58
+Using One State Instead (And What's Better) | 5:02
+Updating State That Depends On The Previous State | 4:43
+Exercise: Using State with Form Inputs
+Exercise: Updating State Based On Older State
+Alternative: Creating A Shared Handler Function | 6:17
+Handling Form Submission | 5:02
+Adding Two-Way Binding | 3:01
+Time to Practice: Working with Events & State
+Child-to-Parent Component Communication (Bottom-up) | 14:18
+Lifting The State Up | 7:08
+Derived / Computed State | 6:54
+Controlled vs Uncontrolled Components & Stateless vs Stateful Components | 5:33
+Learning Check: Working with Events & State
+Module Resources | 0:19
+
+- [BONUS / OPTIONAL] Rendering Lists & Conditional Content • 11 lectures • 1hr 1min
+Module Introduction | 0:46
+Rendering Lists of Data | 7:29
+Exercise: Rendering Lists of Data
+Using Stateful Lists | 4:45
+Understanding "Keys" | 7:12
+Outputting Conditional Content | 7:09
+Exercise: Outputting Conditional Content
+Adding Conditional Return Statements | 5:39
+Demo App: Adding a Chart | 7:43
+Adding Dynamic Styles | 7:47
+Wrap Up & Next Steps | 11:27
+Fixing a Small Bug | 0:14
+Learning Check: Outputting Lists & Conditional Content
+Module Resources | 0:19
+
+- [BONUS / OPTIONAL] Time to Practice: A Complete Practice Project • 22 lectures • 2hr 13min
+Module Introduction | 2:36
+The First Practice Project & Your Tasks | 6:28
+Exercise Hints | 0:58
+Splitting the App Into Components | 7:24
+Handling Events | 9:39
+Managing State | 9:59
+Lifting the State Up | 8:52
+Outputting Results Conditionally | 10:05
+Adding CSS Modules | 6:16
+Fixing a Small Bug | 0:32
+Introducing the Second Project | 2:57
+Exercise Hints | 0:32
+Adding a "User" Component | 7:06
+Adding a re-usable "Card" Component | 8:37
+Adding a re-usable "Button" Component | 3:50
+Managing the User Input State | 4:57
+Adding Validation & Resetting Logic | 4:34
+Adding a Users List Component | 10:45
+Managing a List Of Users via State | 9:27
+Adding The "ErrorModal" Component | 8:04
+Managing the Error State | 8:57
+Module Resources | 0:19

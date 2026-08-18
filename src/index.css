@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.sample-spacing {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Turn off all dark: utility variants inside this specific container */
+.force-light-mode [class*="dark:"] {
+    --tw-text-opacity: 1 !important;
+    --tw-bg-opacity: 1 !important;
+}
+
+/* Explicitly force your light mode baseline styles */
+.force-light-mode {
+    background-color: #f3f4f6 !important; /* bg-gray-100 */
+    color: #111827 !important;            /* text-gray-900 */
+}

@@ -4,7 +4,10 @@ import Button from "./common/Button.jsx";
 import Modal from "./common/Modal.jsx";
 
 export default function Project({project, addTask, changeMode, deleteProject}) {
+    const dialogRef = useRef(null);
     const taskInputRef = useRef();
+
+    const [isOpen, setIsOpen] = useState(false);
 
     const handleAddingTask = () => {
         const unixTimeSec = Math.floor(Date.now() / 1000);
@@ -19,32 +22,19 @@ export default function Project({project, addTask, changeMode, deleteProject}) {
         taskInputRef.current.value = '';
     }
 
+    const handleProjectDelete = () => {
+        changeMode('init');
+        deleteProject(project.id);
+    };
+
     const handleTaskUpdate = (taskId, newStatus) => {
 
     };
 
-    /*------------------------*/
-    const deleteBtnRef = useRef(null);
-    const openProjectDeleteModal = () => {
-        openModal();
-    };
-    const handleProjectDelete = () => {
-
-        deleteBtnRef.current?.focus();
-        changeMode('init');
-        // deleteProject(project.id);
-    };
-
-    const [isOpen, setIsOpen] = useState(false);
-
-    // Keep accessibility refs in the parent wrapper
-    const dialogRef = useRef(null);
-    const openBtnRef = useRef(null);
-
+    /*Modal functions*/
     const closeModal = () => {
         setIsOpen(false);
         document.body.style.overflow = "";
-        openBtnRef.current?.focus();
     };
 
     const openModal = () => {
@@ -52,8 +42,6 @@ export default function Project({project, addTask, changeMode, deleteProject}) {
         document.body.style.overflow = "hidden";
         setTimeout(() => dialogRef.current?.focus(), 0);
     };
-
-
 
     return <>
         <Modal
@@ -96,7 +84,6 @@ export default function Project({project, addTask, changeMode, deleteProject}) {
                             label="Edit"
                     />
                     <Button action={openModal}
-                            ref={deleteBtnRef}
                             color="red"
                             label="Delete"
                     />

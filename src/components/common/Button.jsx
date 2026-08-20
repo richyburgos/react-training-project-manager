@@ -1,6 +1,11 @@
 import {useState, useRef} from "react";
 
-export default function Button({action, label, type = 'button', color = 'blue', noWrap = false}) {
+export default function Button({ action,
+                                 label,
+                                 type = 'button',
+                                 color = 'blue',
+                                 noWrap = false})
+{
     const buttonColors = {
         blue: "text-blue-900 border-blue-200 focus-visible:ring-blue-500  bg-blue-100 hover:bg-blue-200",
         ghost: "bg-transparent border-slate-200 hover:bg-slate-50 text-slate-900 focus-visible:ring-blue-500",

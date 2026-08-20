@@ -14,8 +14,8 @@ export default function Project({ project,
     const dialogRef = useRef(null);
     const taskInputRef = useRef();
 
-    const [isOpen, setIsOpen] = useState(false);
     const [editModalIsOpen, setEditModalIsOpen] = useState(false);
+    const [deleteModalIsOpen, setDeleteModalIsOpen] = useState(false);
 
     const handleAddingTask = () => {
         const unixTimeSec = Math.floor(Date.now() / 1000);
@@ -40,13 +40,13 @@ export default function Project({ project,
     };
 
     /*Modal functions*/
-    const closeModal = () => {
-        setIsOpen(false);
+    const closeDeleteModal = () => {
+        setDeleteModalIsOpen(false);
         document.body.style.overflow = "";
     };
 
-    const openModal = () => {
-        setIsOpen(true);
+    const openDeleteModal = () => {
+        setDeleteModalIsOpen(true);
         document.body.style.overflow = "hidden";
         setTimeout(() => dialogRef.current?.focus(), 0);
     };
@@ -76,8 +76,17 @@ export default function Project({ project,
             />}
             confirmAction={handleProjectDelete}
         />
-        <section className="px-4 md:px-8 mt-6 flex flex-col gap-4">
 
+        <Modal
+            isOpen={deleteModalIsOpen}
+            onClose={closeDeleteModal}
+            dialogRef={dialogRef}
+            title="Delete Project"
+            body="Are you sure you want to delete this project? This action cannot be undone."
+            confirmAction={handleProjectDelete}
+        />
+
+        <section className="px-4 md:px-8 mt-6 flex flex-col gap-4">
             <div className="relative rounded-lg border border-slate-100 bg-white p-6 shadow-sm">
 
                 {/* FIRST DIV: Main text content area */}
@@ -108,7 +117,7 @@ export default function Project({ project,
                             color="green"
                             label="Edit"
                     />
-                    <Button action={openModal}
+                    <Button action={openDeleteModal}
                             color="red"
                             label="Delete"
                     />

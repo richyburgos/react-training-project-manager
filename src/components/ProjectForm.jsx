@@ -17,18 +17,6 @@ export default function ProjectForm({ mode = "create", changeMode, addProject, u
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const unixTimeSec = Math.floor(Date.now() / 1000);
-
-        addProject({
-            id: unixTimeSec,
-            title: titleRef.current.value,
-            description: descRef.current.value,
-            dueDate: dueDateRef.current.value,
-            tasks: []
-        });
-        titleRef.current.value = '';
-        descRef.current.value = '';
-        dueDateRef.current.value = '';
 
         if (mode === "edit") {
             updateProject({

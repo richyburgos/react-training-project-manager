@@ -1,6 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 
-export default function Modal({ isOpen, onClose, dialogRef, confirmAction, title='Add Title', body='Add Body' }) {
+export default function Modal({ isOpen,
+                                onClose,
+                                confirmationButtons = true,
+                                dialogRef,
+                                confirmAction,
+                                title="Add Title",
+                                body="Add Body" })
+{
     const overlayRef = useRef(null);
 
     // Accessibility: ESC key and Tab Trapping
@@ -48,10 +55,10 @@ export default function Modal({ isOpen, onClose, dialogRef, confirmAction, title
                 aria-modal="true"
                 aria-labelledby="modal-title"
                 tabIndex="-1"
-                className="w-full max-w-lg bg-white border border-slate-100 shadow-lg rounded-lg relative max-h-[95vh] overflow-y-auto outline-none p-4 md:p-6 dark:bg-neutral-800 dark:border-neutral-700"
+                className="w-full max-w-lg bg-white border border-slate-100 shadow-lg rounded-lg relative max-h-[95vh] overflow-y-auto outline-none p-4 md:p-6 "
             >
-                <div className="flex items-center pb-3 border-b border-slate-300 dark:border-neutral-700">
-                    <h3 id="modal-title" className="text-slate-900 text-lg font-semibold flex-1 dark:text-slate-50">
+                <div className="flex items-center pb-3 border-b border-slate-300">
+                    <h3 id="modal-title" className="text-slate-900 text-lg font-semibold flex-1">
                         {title}
                     </h3>
 
@@ -73,12 +80,14 @@ export default function Modal({ isOpen, onClose, dialogRef, confirmAction, title
                 </div>
 
                 <div className="my-6">
-                    <p className="text-slate-600 text-sm leading-relaxed dark:text-slate-400">
+                    { typeof body === 'string' && <p className="text-slate-600 text-sm leading-relaxed dark:text-slate-400">
                         {body}
                     </p>
+                    }
+                    { (React.isValidElement(body)) && body }
                 </div>
 
-                <div className="border-t border-slate-300 flex justify-end gap-4 pt-4 md:pt-6 dark:border-neutral-700">
+                { confirmationButtons && <div className="border-t border-slate-300 flex justify-end gap-4 pt-4 md:pt-6 dark:border-neutral-700">
                     <button
                         type="button"
                         onClick={onClose}
@@ -87,13 +96,12 @@ export default function Modal({ isOpen, onClose, dialogRef, confirmAction, title
                         Cancel
                     </button>
                     <button onClick={confirmAction}
-                        type="button"
-                        className="px-3.5 py-2 text-white text-sm font-semibold rounded-md cursor-pointer bg-blue-600 border border-blue-600 transition-colors hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                            type="button"
+                            className="px-3.5 py-2 text-white text-sm font-semibold rounded-md cursor-pointer bg-blue-600 border border-blue-600 transition-colors hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                     >
                         Accept
                     </button>
-
-                </div>
+                </div> }
             </div>
         </div>
     );

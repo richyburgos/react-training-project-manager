@@ -23,67 +23,48 @@ function App() {
     const [mode, setMode] = useState('init');
     const [selectedProjectIndex, setSelectedProjectIndex] = useState(null);
 
-    const appendProject = (project) => {
+    const updateProjectById = (projectId, callback) => {
+        setProjects(prevProjects =>
+            prevProjects.map(p => p.id === projectId ? callback(p) : p)
+        );
+    };
 
-        setProjects((prevState) => {
-            return [...prevState, project];
-        });
+    const updateProjectTasks = (projectId, callback) => {
+        updateProjectById(projectId, (project) => ({
+            ...project,
+            tasks: callback(project.tasks)
+        }));
+    };
+
+    const appendProject = (project) => {
+        setProjects(prevState => [...prevState, project]);
     };
 
     const removeProject = (id) => {
         setProjects(prevProjects => prevProjects.filter(project => project.id !== id));
-    }
+    };
 
     const removeTask = (projectId, taskId) => {
-        setProjects(prevProjects =>
-            prevProjects.map(p => {
-                if (p.id === projectId) {
-                    return {
-                        ...p,
-                        tasks: p.tasks.filter(task => task.id !== taskId)
-                    };
-                }
-                return p;
-            })
+        updateProjectTasks(projectId, (tasks) =>
+            tasks.filter(task => task.id !== taskId)
         );
     };
 
     const appendTask = (projectId, newTask) => {
-        setProjects(prevProject =>
-            prevProject.map(p => {
-                if (p.id === projectId) {
-                    return {
-                        ...p,
-                        tasks: [...p.tasks, newTask]
-                    };
-                }
-                return p;
-            })
-        );
+        updateProjectTasks(projectId, (tasks) => [...tasks, newTask]);
     };
 
     const toggleTaskCompleted = (projectId, taskId) => {
-        setProjects(prevProjects =>
-            prevProjects.map(p => {
-                if (p.id === projectId) {
-                    return {
-                        ...p,
-                        tasks: p.tasks.map(task =>
-                            task.id === taskId
-                                ? { ...task, completed: !task.completed }
-                                : task
-                        )
-                    };
-                }
-                return p;
-            })
+        updateProjectTasks(projectId, (tasks) =>
+            tasks.map(task =>
+                task.id === taskId ? { ...task, completed: !task.completed } : task
+            )
         );
     };
-    function updateProject(updatedProject) {
-        setProjects(prevProjects =>
-            prevProjects.map(p => p.id === updatedProject.id ? updatedProject : p)
-        );
-    }
+
+    const updateProject = (updatedProject) => {
+        updateProjectById(updatedProject.id, () => updatedProject);
+    };
 
     const viewProject = (id) => {
         setSelectedProjectIndex(projects.findIndex(project => project.id === id));
@@ -93,8 +74,8 @@ function App() {
         setMode(mode);
     };
 
-    return (
-        <main className="relative h-screen">
+return (
+    <main className="relative h-screen">
             <div className="flex items-start">
                 <Sidebar projects={projects}
                          selectProject={viewProject}

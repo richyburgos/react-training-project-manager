@@ -62,6 +62,12 @@ function App() {
         );
     };
 
+    function updateProject(updatedProject) {
+        setProjects(prevProjects =>
+            prevProjects.map(p => p.id === updatedProject.id ? updatedProject : p)
+        );
+    }
+
     const viewProject = (id) => {
         setSelectedProjectIndex(projects.findIndex(project => project.id === id));
     };
@@ -92,6 +98,7 @@ function App() {
                                  removeTask={removeTask}
                                  deleteProject={removeProject}
                                  changeMode={changeMode}
+                                 updateProject={updateProject}
                         />
                     }
                 </section>

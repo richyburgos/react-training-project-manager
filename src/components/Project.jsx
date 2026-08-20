@@ -2,17 +2,20 @@ import React, {useState, useRef} from "react";
 import ProjectTasks from "./ProjectTasks.jsx";
 import Button from "./common/Button.jsx";
 import Modal from "./common/Modal.jsx";
+import ProjectForm from "./ProjectForm.jsx";
 
 export default function Project({ project,
                                   addTask,
                                   changeMode,
                                   removeTask,
+                                  updateProject,
                                   deleteProject })
 {
     const dialogRef = useRef(null);
     const taskInputRef = useRef();
 
     const [isOpen, setIsOpen] = useState(false);
+    const [editModalIsOpen, setEditModalIsOpen] = useState(false);
 
     const handleAddingTask = () => {
         const unixTimeSec = Math.floor(Date.now() / 1000);
@@ -48,13 +51,29 @@ export default function Project({ project,
         setTimeout(() => dialogRef.current?.focus(), 0);
     };
 
+    const closeEditModal = () => {
+        setEditModalIsOpen(false);
+        document.body.style.overflow = "";
+    };
+
+    const openEditModal = () => {
+        setEditModalIsOpen(true);
+        document.body.style.overflow = "hidden";
+        setTimeout(() => dialogRef.current?.focus(), 0);
+    };
+
     return <>
         <Modal
-            isOpen={isOpen}
-            onClose={closeModal}
+            isOpen={editModalIsOpen}
+            onClose={closeEditModal}
             dialogRef={dialogRef}
-            title="Delete Project"
-            body="Are you sure you want to delete this project? This action cannot be undone."
+            title=""
+            confirmationButtons={false}
+            body={<ProjectForm mode="edit"
+                               project={project}
+                               updateProject={updateProject}
+                               changeMode={closeEditModal}
+            />}
             confirmAction={handleProjectDelete}
         />
         <section className="px-4 md:px-8 mt-6 flex flex-col gap-4">
@@ -85,7 +104,8 @@ export default function Project({ project,
                             color="dark"
                             label="Cancel"
                     />
-                    <Button color="green"
+                    <Button action={openEditModal}
+                            color="green"
                             label="Edit"
                     />
                     <Button action={openModal}
@@ -121,6 +141,7 @@ export default function Project({ project,
                     </form>
                     <ProjectTasks updateTask={handleTaskUpdate}
                                   tasks={project.tasks}
+                                  removeTask={(taskId) => removeTask(project.id, taskId)}
                     />
                 </div>
             </div>

@@ -3,7 +3,12 @@ import ProjectTasks from "./ProjectTasks.jsx";
 import Button from "./common/Button.jsx";
 import Modal from "./common/Modal.jsx";
 
-export default function Project({project, addTask, changeMode, deleteProject}) {
+export default function Project({ project,
+                                  addTask,
+                                  changeMode,
+                                  removeTask,
+                                  deleteProject })
+{
     const dialogRef = useRef(null);
     const taskInputRef = useRef();
 

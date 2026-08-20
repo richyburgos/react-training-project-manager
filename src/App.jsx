@@ -34,19 +34,29 @@ function App() {
         setProjects(prevProjects => prevProjects.filter(project => project.id !== id));
     }
 
+    const removeTask = (projectId, taskId) => {
+        setProjects(prevProjects =>
+            prevProjects.map(p => {
+                if (p.id === projectId) {
+                    return {
+                        ...p,
+                        tasks: p.tasks.filter(task => task.id !== taskId)
+                    };
+                }
+                return p;
+            })
+        );
+    };
+
     const appendTask = (projectId, newTask) => {
         setProjects(prevProject =>
             prevProject.map(p => {
-                // 1. Find the target project by its ID
                 if (p.id === projectId) {
-                    // 2. Return a new copy of that project object
                     return {
                         ...p,
-                        // 3. Create a new array for tasks, copying the old ones and appending the new one
                         tasks: [...p.tasks, newTask]
                     };
                 }
-                // 4. Leave all other projects completely unchanged
                 return p;
             })
         );
@@ -79,6 +89,7 @@ function App() {
                     { mode === 'view' &&
                         <Project project={projects[selectedProjectIndex]}
                                  addTask={appendTask}
+                                 removeTask={removeTask}
                                  deleteProject={removeProject}
                                  changeMode={changeMode}
                         />

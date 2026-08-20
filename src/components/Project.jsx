@@ -8,6 +8,7 @@ export default function Project({ project,
                                   addTask,
                                   changeMode,
                                   removeTask,
+                                  toggleTaskCompleted,
                                   updateProject,
                                   deleteProject })
 {
@@ -33,10 +34,6 @@ export default function Project({ project,
     const handleProjectDelete = () => {
         changeMode('init');
         deleteProject(project.id);
-    };
-
-    const handleTaskUpdate = (taskId, newStatus) => {
-
     };
 
     /*Modal functions*/
@@ -148,7 +145,7 @@ export default function Project({ project,
                                 label="Add Task"
                         />
                     </form>
-                    <ProjectTasks updateTask={handleTaskUpdate}
+                    <ProjectTasks toggleTaskCompleted={(taskId) => toggleTaskCompleted(project.id, taskId)}
                                   tasks={project.tasks}
                                   removeTask={(taskId) => removeTask(project.id, taskId)}
                     />

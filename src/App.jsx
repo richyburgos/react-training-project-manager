@@ -62,6 +62,23 @@ function App() {
         );
     };
 
+    const toggleTaskCompleted = (projectId, taskId) => {
+        setProjects(prevProjects =>
+            prevProjects.map(p => {
+                if (p.id === projectId) {
+                    return {
+                        ...p,
+                        tasks: p.tasks.map(task =>
+                            task.id === taskId
+                                ? { ...task, completed: !task.completed }
+                                : task
+                        )
+                    };
+                }
+                return p;
+            })
+        );
+    };
     function updateProject(updatedProject) {
         setProjects(prevProjects =>
             prevProjects.map(p => p.id === updatedProject.id ? updatedProject : p)
@@ -96,6 +113,7 @@ function App() {
                         <Project project={projects[selectedProjectIndex]}
                                  addTask={appendTask}
                                  removeTask={removeTask}
+                                 toggleTaskCompleted={toggleTaskCompleted}
                                  deleteProject={removeProject}
                                  changeMode={changeMode}
                                  updateProject={updateProject}

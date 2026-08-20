@@ -1,7 +1,6 @@
-import {useState, useRef} from "react";
 import Button from "./common/Button.jsx";
 
-export default function ProjectTasks({tasks, removeTask}) {
+export default function ProjectTasks({ tasks, removeTask, toggleTaskCompleted }) {
     if(!tasks || tasks.length === 0) return (
         <ul className="mt-4 space-y-2 text-center">
             <li className="flex items-center gap-2.5 text-center">
@@ -12,17 +11,18 @@ export default function ProjectTasks({tasks, removeTask}) {
         </ul>
     );
 
-    return <ul className="mt-4 space-y-2">
+return <ul className="mt-4 space-y-2">
         { tasks.map(task => (
             <li key={task.id} className="flex items-center justify-between gap-2.5">
-                <div className="flex items-center gap-2.5">
+                <label className="flex items-center gap-2.5 cursor-pointer">
                     <input type="checkbox"
                            checked={task.completed}
+                           onChange={() => toggleTaskCompleted(task.id)}
                            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
                     <span className="text-sm font-medium text-slate-900 dark:text-slate-400">
                         {task.description}
                     </span>
-                </div>
+                </label>
                 <Button color="red"
                         label="Remove"
                         action={() => removeTask(task.id)}

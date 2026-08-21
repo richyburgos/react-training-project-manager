@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 
 export default function Modal({ isOpen,
                                 onClose,
@@ -40,7 +41,7 @@ export default function Modal({ isOpen,
         };
     }, [isOpen, onClose, dialogRef]);
 
-    return (
+    return createPortal (
         <div
             id="modalOverlay"
             ref={overlayRef}
@@ -57,7 +58,7 @@ export default function Modal({ isOpen,
                 tabIndex="-1"
                 className="w-full max-w-lg bg-white border border-slate-100 shadow-lg rounded-lg relative max-h-[95vh] overflow-y-auto outline-none p-4 md:p-6 "
             >
-                <div className="flex items-center pb-3 border-b border-slate-300">
+                <div className={`flex items-center border-slate-300 ${title.trim() ? "border-b pb-3" : ""}`}>
                     <h3 id="modal-title" className="text-slate-900 text-lg font-semibold flex-1">
                         {title}
                     </h3>
@@ -79,15 +80,15 @@ export default function Modal({ isOpen,
                     </button>
                 </div>
 
-                <div className="my-6">
-                    { typeof body === 'string' && <p className="text-slate-600 text-sm leading-relaxed dark:text-slate-400">
+                <div className={`${title.trim() ? "my-6" : ""}`}>
+                    { typeof body === 'string' && <p className="text-slate-600 text-sm leading-relaxed">
                         {body}
                     </p>
                     }
                     { (React.isValidElement(body)) && body }
                 </div>
 
-                { confirmationButtons && <div className="border-t border-slate-300 flex justify-end gap-4 pt-4 md:pt-6 dark:border-neutral-700">
+                { confirmationButtons && <div className="border-t border-slate-300 flex justify-end gap-4 pt-4 md:pt-6">
                     <button
                         type="button"
                         onClick={onClose}
@@ -103,6 +104,7 @@ export default function Modal({ isOpen,
                     </button>
                 </div> }
             </div>
-        </div>
+        </div>,
+        document.getElementById('modal-root')
     );
 }

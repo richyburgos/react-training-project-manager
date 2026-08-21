@@ -1,8 +1,16 @@
-import { useRef, useEffect } from "react";
+import {useRef, useEffect, useState} from "react";
 import LabeledInput from "./common/LabeledInput.jsx";
 import Button from "./common/Button.jsx";
+import Toast from "./common/Toast.jsx";
 
-export default function ProjectForm({ mode = "create", changeMode, addProject, updateProject, project }) {
+export default function ProjectForm({ mode = "create",
+                                      type = 'view',
+                                      changeMode,
+                                      displayToast,
+                                      addProject,
+                                      updateProject,
+                                      project })
+{
     const titleRef = useRef();
     const descRef = useRef();
     const dueDateRef = useRef();
@@ -25,6 +33,8 @@ export default function ProjectForm({ mode = "create", changeMode, addProject, u
                 description: descRef.current.value,
                 dueDate: dueDateRef.current.value
             });
+
+            displayToast('Successfully updated project!');
         } else {
             const unixTimeSec = Math.floor(Date.now() / 1000);
             addProject({
@@ -39,13 +49,17 @@ export default function ProjectForm({ mode = "create", changeMode, addProject, u
             descRef.current.value = '';
             dueDateRef.current.value = '';
 
+            displayToast('Successfully created project!');
+
+            if (type === 'modal') return;
+
             changeMode('init');
         }
     };
 
     return (
         <section className="px-4 md:px-8 mt-6" data-theme="light">
-            <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+            <div className={`text-center max-w-3xl mx-auto ${type === "modal" ? "mb-6 md:mb-8" : "mb-12 md:mb-16"}`}>
                 <h2 className="text-3xl font-bold text-slate-900 mb-6 md:text-4xl">
                     {mode === "edit" ? "Edit project" : "Create a new project"}
                 </h2>

@@ -7,18 +7,20 @@ import ProjectForm from "./ProjectForm.jsx";
 export default function Project({ project,
                                   addTask,
                                   changeMode,
+                                  displayToast,
                                   removeTask,
                                   toggleTaskCompleted,
                                   updateProject,
                                   deleteProject })
 {
-    const dialogRef = useRef(null);
+    const editDialogRef = useRef(null);
+    const deleteDialogRef = useRef(null);
     const taskInputRef = useRef();
 
     const [editModalIsOpen, setEditModalIsOpen] = useState(false);
     const [deleteModalIsOpen, setDeleteModalIsOpen] = useState(false);
 
-    const handleAddingTask = () => {
+    const handleAddTask = () => {
         const unixTimeSec = Math.floor(Date.now() / 1000);
 
         const newTask = {
@@ -31,7 +33,7 @@ export default function Project({ project,
         taskInputRef.current.value = '';
     }
 
-    const handleProjectDelete = () => {
+    const handleDeleteProject = () => {
         changeMode('init');
         deleteProject(project.id);
     };
@@ -45,7 +47,7 @@ export default function Project({ project,
     const openDeleteModal = () => {
         setDeleteModalIsOpen(true);
         document.body.style.overflow = "hidden";
-        setTimeout(() => dialogRef.current?.focus(), 0);
+        setTimeout(() => deleteDialogRef.current?.focus(), 0);
     };
 
     const closeEditModal = () => {
@@ -56,31 +58,33 @@ export default function Project({ project,
     const openEditModal = () => {
         setEditModalIsOpen(true);
         document.body.style.overflow = "hidden";
-        setTimeout(() => dialogRef.current?.focus(), 0);
+        setTimeout(() => editDialogRef.current?.focus(), 0);
     };
 
     return <>
         <Modal
             isOpen={editModalIsOpen}
             onClose={closeEditModal}
-            dialogRef={dialogRef}
+            dialogRef={editDialogRef}
             title=""
             confirmationButtons={false}
-            body={<ProjectForm mode="edit"
-                               project={project}
-                               updateProject={updateProject}
-                               changeMode={closeEditModal}
-            />}
-            confirmAction={handleProjectDelete}
+            body={ <ProjectForm mode="edit"
+                                type="modal"
+                                displayToast={displayToast}
+                                project={project}
+                                updateProject={updateProject}
+                                changeMode={closeEditModal}
+                   />
+                 }
         />
 
         <Modal
             isOpen={deleteModalIsOpen}
             onClose={closeDeleteModal}
-            dialogRef={dialogRef}
+            dialogRef={deleteDialogRef}
             title="Delete Project"
             body="Are you sure you want to delete this project? This action cannot be undone."
-            confirmAction={handleProjectDelete}
+            confirmAction={handleDeleteProject}
         />
 
         <section className="px-4 md:px-8 mt-6 flex flex-col gap-4">
@@ -127,7 +131,7 @@ export default function Project({ project,
                     <h2 className="text-2xl font-bold text-slate-900 mb-4">
                         Tasks
                     </h2>
-                    <form className="flex items-center gap-2.5" onSubmit={handleAddingTask}>
+                    <form className="flex items-center gap-2.5" onSubmit={handleAddTask}>
                         {/* Input automatically stretches because of 'w-full' combined with flex layout */}
                         <input ref={taskInputRef}
                                required

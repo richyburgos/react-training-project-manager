@@ -3,6 +3,7 @@ import BlankProject from "./components/BlankProject.jsx";
 import {useState} from "react";
 import ProjectForm from "./components/ProjectForm.jsx";
 import Project from "./components/Project.jsx";
+import Toast from "./components/common/Toast.jsx";
 
 function App() {
     const [projects, setProjects] = useState([
@@ -21,7 +22,12 @@ function App() {
         }
     ]);
     const [mode, setMode] = useState('init');
-    const [selectedProjectIndex, setSelectedProjectIndex] = useState(null);
+    const [selectedProjectId, setSelectedProjectId] = useState(null);
+    const [ toast, setToast ] = useState({
+        type: 'success',
+        message: ''
+    });
+    const [ showToast, setShowToast ] = useState(false);
 
     const updateProjectById = (projectId, callback) => {
         setProjects(prevProjects =>
@@ -36,12 +42,13 @@ function App() {
         }));
     };
 
-    const appendProject = (project) => {
+    const addProject = (project) => {
         setProjects(prevState => [...prevState, project]);
     };
 
-    const removeProject = (id) => {
+    const deleteProject = (id) => {
         setProjects(prevProjects => prevProjects.filter(project => project.id !== id));
+        setSelectedProjectId(null);
     };
 
     const removeTask = (projectId, taskId) => {
@@ -50,7 +57,7 @@ function App() {
         );
     };
 
-    const appendTask = (projectId, newTask) => {
+    const addTask = (projectId, newTask) => {
         updateProjectTasks(projectId, (tasks) => [...tasks, newTask]);
     };
 
@@ -66,44 +73,64 @@ function App() {
         updateProjectById(updatedProject.id, () => updatedProject);
     };
 
-    const viewProject = (id) => {
-        setSelectedProjectIndex(projects.findIndex(project => project.id === id));
+    const selectProject = (id) => {
+        setSelectedProjectId(id);
+    };
+
+    const getSelectedProject = () => {
+        return selectedProjectId ? projects.find(project => project.id === selectedProjectId) : {};
     };
 
     const changeMode = (mode) => {
+        if(mode === "init" && selectedProjectId) setSelectedProjectId(null);
         setMode(mode);
     };
 
-return (
-    <main className="relative h-screen">
-            <div className="flex items-start">
-                <Sidebar projects={projects}
-                         selectProject={viewProject}
-                         changeMode={changeMode}
+    const displayToast = (showToast = true, type = "success", message = "") => {
+        setToast({ message, type});
+        setShowToast(showToast);
+    };
+
+    return (
+        <>
+            { showToast &&
+                <Toast type={toast.type}
+                       message={toast.message}
+                       resetToast={() => displayToast(false, 'success', '')}
                 />
-                <section className="main-content w-full h-screen overflow-auto p-6 pt-[68px] force-light-mode">
-                    { mode === 'init' &&
-                        <BlankProject changeMode={changeMode} />
-                    }
-                    { mode === 'create' &&
-                        <ProjectForm addProject={appendProject}
+            }
+            <main className="relative h-screen">
+                <div className="flex items-start">
+                    <Sidebar projects={projects}
+                             selectProject={selectProject}
+                             changeMode={changeMode}
+                    />
+                    <section className="main-content w-full h-screen overflow-auto p-6 pt-[68px] force-light-mode">
+                        { mode === 'init' &&
+                            <BlankProject changeMode={changeMode} />
+                        }
+                        { mode === 'create' &&
+                            <ProjectForm displayToast={(message) => displayToast(true, 'success', message)}
+                                         addProject={addProject}
+                                         changeMode={changeMode}
+                            />
+                        }
+                        { mode === 'view' &&
+                            <Project displayToast={(message) => displayToast(true, 'success', message)}
+                                     project={getSelectedProject()}
+                                     addTask={addTask}
+                                     removeTask={removeTask}
+                                     toggleTaskCompleted={toggleTaskCompleted}
+                                     deleteProject={deleteProject}
                                      changeMode={changeMode}
-                        />
-                    }
-                    { mode === 'view' &&
-                        <Project project={projects[selectedProjectIndex]}
-                                 addTask={appendTask}
-                                 removeTask={removeTask}
-                                 toggleTaskCompleted={toggleTaskCompleted}
-                                 deleteProject={removeProject}
-                                 changeMode={changeMode}
-                                 updateProject={updateProject}
-                        />
-                    }
-                </section>
-            </div>
-        </main>
-);
+                                     updateProject={updateProject}
+                            />
+                        }
+                    </section>
+                </div>
+            </main>
+        </>
+    );
 }
 
 export default App;

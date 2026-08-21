@@ -46,6 +46,7 @@ export default function Project({ project,
 
     const openDeleteModal = () => {
         setDeleteModalIsOpen(true);
+        setEditModalIsOpen(false);
         document.body.style.overflow = "hidden";
         setTimeout(() => deleteDialogRef.current?.focus(), 0);
     };
@@ -57,6 +58,7 @@ export default function Project({ project,
 
     const openEditModal = () => {
         setEditModalIsOpen(true);
+        setDeleteModalIsOpen(false);
         document.body.style.overflow = "hidden";
         setTimeout(() => editDialogRef.current?.focus(), 0);
     };

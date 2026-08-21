@@ -2,19 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-.sample-spacing {
-    margin-top: 10px;
-    margin-bottom: 10px;
+#toast-root {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    pointer-events: none;
 }
 
-/* Turn off all dark: utility variants inside this specific container */
-.force-light-mode [class*="dark:"] {
-    --tw-text-opacity: 1 !important;
-    --tw-bg-opacity: 1 !important;
-}
-
-/* Explicitly force your light mode baseline styles */
-.force-light-mode {
-    background-color: #f3f4f6 !important; /* bg-gray-100 */
-    color: #111827 !important;            /* text-gray-900 */
+#toast-root > [role="alert"] {
+    pointer-events: auto;
 }

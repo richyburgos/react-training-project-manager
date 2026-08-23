@@ -17,8 +17,7 @@ export default function Project({ project,
     const deleteDialogRef = useRef(null);
     const taskInputRef = useRef();
 
-    const [editModalIsOpen, setEditModalIsOpen] = useState(false);
-    const [deleteModalIsOpen, setDeleteModalIsOpen] = useState(false);
+    const [activeModal, setActiveModal] = useState(null);
 
     const handleAddTask = () => {
         const unixTimeSec = Math.floor(Date.now() / 1000);
@@ -30,70 +29,60 @@ export default function Project({ project,
         };
 
         addTask(project.id, newTask);
-        taskInputRef.current.value = '';
+        taskInputRef.current.value = "";
     }
 
     const handleDeleteProject = () => {
-        changeMode('init');
+        changeMode("init");
         deleteProject(project.id);
     };
 
-    /*Modal functions*/
-    const closeDeleteModal = () => {
-        setDeleteModalIsOpen(false);
-        document.body.style.overflow = "";
-    };
-
     const openDeleteModal = () => {
-        setDeleteModalIsOpen(true);
-        setEditModalIsOpen(false);
+        setActiveModal("delete");
         document.body.style.overflow = "hidden";
         setTimeout(() => deleteDialogRef.current?.focus(), 0);
     };
 
-    const closeEditModal = () => {
-        setEditModalIsOpen(false);
-        document.body.style.overflow = "";
-    };
-
     const openEditModal = () => {
-        setEditModalIsOpen(true);
-        setDeleteModalIsOpen(false);
+        setActiveModal("edit");
         document.body.style.overflow = "hidden";
         setTimeout(() => editDialogRef.current?.focus(), 0);
     };
 
+    const closeModal = () => {
+        setActiveModal(null);
+        document.body.style.overflow = "";
+    };
+
     return <>
-        <Modal
-            isOpen={editModalIsOpen}
-            onClose={closeEditModal}
-            dialogRef={editDialogRef}
-            title=""
-            confirmationButtons={false}
-            body={ <ProjectForm mode="edit"
-                                type="modal"
-                                displayToast={displayToast}
-                                project={project}
-                                updateProject={updateProject}
-                                changeMode={closeEditModal}
-                   />
-                 }
+        <Modal isOpen={activeModal ==="edit"}
+               onClose={closeModal}
+               dialogRef={editDialogRef}
+               title=""
+               confirmationButtons={false}
+               body={ <ProjectForm mode="edit"
+                                   type="modal"
+                                   displayToast={displayToast}
+                                   project={project}
+                                   updateProject={updateProject}
+                                   changeMode={close}
+                      />
+               }
         />
 
-        <Modal
-            isOpen={deleteModalIsOpen}
-            onClose={closeDeleteModal}
-            dialogRef={deleteDialogRef}
-            title="Delete Project"
-            body="Are you sure you want to delete this project? This action cannot be undone."
-            confirmAction={handleDeleteProject}
+        <Modal isOpen={activeModal ==="delete"}
+               onClose={closeModal}
+               dialogRef={deleteDialogRef}
+               title="Delete Project"
+               body="Are you sure you want to delete this project? This action cannot be undone."
+               confirmAction={handleDeleteProject}
         />
 
         <section className="px-4 md:px-8 mt-6 flex flex-col gap-4">
             <div className="relative rounded-lg border border-slate-100 bg-white p-6 shadow-sm">
 
                 {/* FIRST DIV: Main text content area */}
-                {/* 'pr-36' creates a permanent right-side buffer zone to prevent text clipping */}
+                {/* "pr-36" creates a permanent right-side buffer zone to prevent text clipping */}
                 <div className="pr-36">
                     <h2 className="text-3xl font-bold text-slate-900 mb-4">
                         {project.title}
@@ -109,10 +98,10 @@ export default function Project({ project,
                 </div>
 
                 {/* SECOND DIV: Action buttons area */}
-                {/* 'absolute top-6 right-6' forces it to the top-right corner */}
-                {/* Removed 'mt-6' and used 'flex gap-2' to align buttons horizontally */}
+                {/* "absolute top-6 right-6" forces it to the top-right corner */}
+                {/* Removed "mt-6" and used "flex gap-2" to align buttons horizontally */}
                 <div className="absolute top-6 right-6 flex items-center gap-2">
-                    <Button action={() => changeMode('init')}
+                    <Button action={() => changeMode("init")}
                             color="dark"
                             label="Cancel"
                     />
@@ -127,14 +116,14 @@ export default function Project({ project,
                 </div>
 
                 {/* THIRD DIV: Your body content section */}
-                {/* 'mt-6' pushes it cleanly down below the title/date line */}
-                {/* Does NOT need 'pr-36' because it sits safely underneath the buttons */}
+                {/* "mt-6" pushes it cleanly down below the title/date line */}
+                {/* Does NOT need "pr-36" because it sits safely underneath the buttons */}
                 <div className="mt-6 border-t border-slate-100 pt-4 text-base text-slate-700 leading-relaxed">
                     <h2 className="text-2xl font-bold text-slate-900 mb-4">
                         Tasks
                     </h2>
                     <form className="flex items-center gap-2.5" onSubmit={handleAddTask}>
-                        {/* Input automatically stretches because of 'w-full' combined with flex layout */}
+                        {/* Input automatically stretches because of "w-full" combined with flex layout */}
                         <input ref={taskInputRef}
                                required
                                type="text"

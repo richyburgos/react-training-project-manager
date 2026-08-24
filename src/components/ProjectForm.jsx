@@ -76,6 +76,7 @@ export default function ProjectForm({ mode = "create",
                                   ref={titleRef}
                     />
                     <LabeledInput inputId="description"
+                                  inputType="textarea"
                                   placeholder="Project description"
                                   label="Description"
                                   ref={descRef}

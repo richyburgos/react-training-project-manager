@@ -1,4 +1,3 @@
-import {useState, useRef} from "react";
 import NoProjects from "../assets/no-projects.png";
 import Button from "./common/Button.jsx";
 

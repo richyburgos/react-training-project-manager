@@ -1,7 +1,6 @@
-import {useRef, useEffect, useState} from "react";
+import {useRef, useEffect} from "react";
 import LabeledInput from "./common/LabeledInput.jsx";
 import Button from "./common/Button.jsx";
-import Toast from "./common/Toast.jsx";
 
 export default function ProjectForm({ mode = "create",
                                       type = 'view',

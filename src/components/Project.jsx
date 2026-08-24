@@ -1,4 +1,4 @@
-import React, {useState, useRef} from "react";
+import {useState, useRef} from "react";
 import ProjectTasks from "./ProjectTasks.jsx";
 import Button from "./common/Button.jsx";
 import Modal from "./common/Modal.jsx";

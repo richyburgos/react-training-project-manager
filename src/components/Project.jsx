@@ -66,7 +66,6 @@ export default function Project({ project,
                                    showSuccessToast={showSuccessToast}
                                    project={project}
                                    updateProject={updateProject}
-                                   changeMode={close}
                       />
                }
         />

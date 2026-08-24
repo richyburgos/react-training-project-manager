@@ -111,6 +111,7 @@ function App() {
                         }
                         { mode === 'create' &&
                             <ProjectForm showSuccessToast={(message) => displayToast(true, 'success', message)}
+                                         onCancel={() => changeMode('init')}
                                          addProject={addProject}
                                          changeMode={changeMode}
                             />
@@ -119,6 +120,7 @@ function App() {
                             <Project showSuccessToast={(message) => displayToast(true, 'success', message)}
                                      project={getSelectedProject()}
                                      addTask={addTask}
+                                     onCancel={() => changeMode('init')}
                                      removeTask={removeTask}
                                      toggleTaskCompleted={toggleTaskCompleted}
                                      deleteProject={deleteProject}

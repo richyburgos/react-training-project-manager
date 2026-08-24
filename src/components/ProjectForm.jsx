@@ -5,8 +5,7 @@ import Toast from "./common/Toast.jsx";
 
 export default function ProjectForm({ mode = "create",
                                       type = 'view',
-                                      changeMode,
-                                      displayToast,
+                                      onCancel,
                                       showSuccessToast,
                                       addProject,
                                       updateProject,
@@ -50,12 +49,8 @@ export default function ProjectForm({ mode = "create",
             descRef.current.value = '';
             dueDateRef.current.value = '';
 
-            displayToast('Successfully created project!');
-
-            if (type === 'modal') return;
-
-            changeMode('init');
             showSuccessToast('Successfully created project!');
+            onCancel();
         }
     };
 
@@ -99,7 +94,7 @@ export default function ProjectForm({ mode = "create",
                                 label="Save"
                         />
 
-                        <Button action={() => changeMode('init')}
+                        <Button action={onCancel}
                                 color="ghost"
                                 label="Cancel"
                         />

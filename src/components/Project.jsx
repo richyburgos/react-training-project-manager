@@ -62,7 +62,7 @@ export default function Project({ project,
                confirmationButtons={false}
                body={ <ProjectForm mode="edit"
                                    type="modal"
-                                   displayToast={displayToast}
+                                   onCancel={closeModal}
                                    showSuccessToast={showSuccessToast}
                                    project={project}
                                    updateProject={updateProject}

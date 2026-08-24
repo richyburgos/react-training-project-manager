@@ -24,7 +24,7 @@ export default function Project({ project,
 
         const newTask = {
             id: unixTimeSec,
-            description: taskInputRef.current.value,
+            description: taskInputRef.current.value.trim(),
             completed: false
         };
 

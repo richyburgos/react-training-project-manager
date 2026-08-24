@@ -7,7 +7,7 @@ import ProjectForm from "./ProjectForm.jsx";
 export default function Project({ project,
                                   addTask,
                                   changeMode,
-                                  displayToast,
+                                  showSuccessToast,
                                   removeTask,
                                   toggleTaskCompleted,
                                   updateProject,
@@ -63,6 +63,7 @@ export default function Project({ project,
                body={ <ProjectForm mode="edit"
                                    type="modal"
                                    displayToast={displayToast}
+                                   showSuccessToast={showSuccessToast}
                                    project={project}
                                    updateProject={updateProject}
                                    changeMode={close}

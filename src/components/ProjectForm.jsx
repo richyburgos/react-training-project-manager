@@ -7,6 +7,7 @@ export default function ProjectForm({ mode = "create",
                                       type = 'view',
                                       changeMode,
                                       displayToast,
+                                      showSuccessToast,
                                       addProject,
                                       updateProject,
                                       project })
@@ -34,7 +35,7 @@ export default function ProjectForm({ mode = "create",
                 dueDate: dueDateRef.current.value
             });
 
-            displayToast('Successfully updated project!');
+            showSuccessToast('Successfully updated project!');
         } else {
             const unixTimeSec = Math.floor(Date.now() / 1000);
             addProject({
@@ -54,6 +55,7 @@ export default function ProjectForm({ mode = "create",
             if (type === 'modal') return;
 
             changeMode('init');
+            showSuccessToast('Successfully created project!');
         }
     };
 

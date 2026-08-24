@@ -86,9 +86,9 @@ function App() {
         setMode(mode);
     };
 
-    const displayToast = (showToast = true, type = "success", message = "") => {
+    const displayToast = (isVisible = true, type = "success", message = "") => {
         setToast({ message, type});
-        setShowToast(showToast);
+        setShowToast(isVisible);
     };
 
     return (
@@ -111,12 +111,13 @@ function App() {
                         }
                         { mode === 'create' &&
                             <ProjectForm displayToast={(message) => displayToast(true, 'success', message)}
+                            <ProjectForm showSuccessToast={(message) => displayToast(true, 'success', message)}
                                          addProject={addProject}
                                          changeMode={changeMode}
                             />
                         }
                         { mode === 'view' &&
-                            <Project displayToast={(message) => displayToast(true, 'success', message)}
+                            <Project showSuccessToast={(message) => displayToast(true, 'success', message)}
                                      project={getSelectedProject()}
                                      addTask={addTask}
                                      removeTask={removeTask}

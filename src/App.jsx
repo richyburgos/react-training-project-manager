@@ -110,7 +110,6 @@ function App() {
                             <BlankProject changeMode={changeMode} />
                         }
                         { mode === 'create' &&
-                            <ProjectForm displayToast={(message) => displayToast(true, 'success', message)}
                             <ProjectForm showSuccessToast={(message) => displayToast(true, 'success', message)}
                                          addProject={addProject}
                                          changeMode={changeMode}
